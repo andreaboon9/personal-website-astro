@@ -2,8 +2,4 @@
   publish = "dist"
   command = "npm run build"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
+# No SPA catch-all redirect: a rule like /* -> /index.html breaks Netlify Forms (POSTs get rewritten).
