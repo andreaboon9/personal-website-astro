@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "Andrea Boonyarungsrit - Product Leader & Mentor",
+    "description": "Product Leader & Mentor - Building experiences that bring people together",
+    "themeColor": "#0a0a0a"
+  },
+  "hero": {
+    "headline": "Hi! I'm Andrea, a Product Leader",
+    "subheadline": "Building experiences that bring people together",
+    "bio": "I'm a product leader passionate about product experiences that bring people together and grow communities. I have experience building for social media, creator economy, and gaming.",
+    "highlights": "My background includes building trust & safety products, AI/ML for content moderation and encouraging prosocial interactions, creator onboarding experiences, and engagement features used by millions.",
+    "locationLine": "Raised in Bangkok 🇹🇭 Currently in Los Angeles 🇺🇸",
+    "heroImage": "/hero.jpg"
+  },
+  "aiProjects": {
+    "title": "AI Projects",
+    "items": [
+      {
+        "title": "Andrea OS",
+        "year": "2025",
+        "tagline": "CLAUDE CODE × CURSOR",
+        "description": "Built a personal life operating system with custom slash commands and sub-agents to automate daily tasks. Features /daily-brief for personalized news, /mentorship-tracker for managing mentees, /brain-dump-analysis for extracting insights from thoughts, and adaptive learning that evolves with my interests and goals.",
+        "image": "/AndreaOS.png",
+        "linkLabel": null,
+        "linkUrl": null
+      },
+      {
+        "title": "Watchlist for Movie Discovery",
+        "year": "2025",
+        "tagline": "CLAUDE CODE × CURSOR",
+        "description": "Built a working movie discovery app with a watchlist feature in approximately 20 minutes using Claude Code in the Cursor terminal. Leveraged Plan mode to break down the development plan, confirming each step before coding to maintain high quality with tests, clean commits, and clear documentation. Successfully created a live prototype running on localhost.",
+        "image": "/Watchlist.png",
+        "linkLabel": "View demo →",
+        "linkUrl": "https://www.linkedin.com/posts/penphobb_i-built-a-working-movie-discovery-app-with-activity-7373672658598559744-Owi9"
+      }
+    ]
+  },
+  "work": {
+    "title": "Work",
+    "items": [
+      {
+        "title": "Voice Chat Enhancements",
+        "org": "ACTIVISION",
+        "when": "2024 • Call of Duty: Modern Warfare III, Call of Duty: Warzone",
+        "description": "Led development of voice chat enhancements to enforce against behavior that violates the Call of Duty Code of Conduct, while sustaining the competitive spirit of Call of Duty games. Combined 67% reduction in repeat offenders of voice-chat based offenses in Modern Warfare III and Call of Duty: Warzone.",
+        "image": "/project-alpha.jpeg"
+      },
+      {
+        "title": "AI-Powered Voice Moderation System",
+        "org": "ACTIVISION",
+        "when": "2023 • Call of Duty: Modern Warfare II, Call of Duty: Warzone",
+        "description": "Led launch of an AI-powered, real-time voice moderation system to combat disruptive behavior and foster a positive and welcoming community for all players. Contributed to Activision being recognized as one of the most innovative gaming companies of 2024 by Fast Company.",
+        "image": "/project-beta.jpg"
+      },
+      {
+        "title": "Community Engagement Features",
+        "org": "BIGO LIVE",
+        "when": "2022",
+        "description": "Led North America GTM strategy of Communities in BIGO LIVE, enabling users to create and manage online communities, and creators to build a following or grow their existing fanbase. Increased feature adoption by 320% and first three-month engagement by 24%.",
+        "image": "/project-delta.jpg"
+      },
+      {
+        "title": "Creator Features",
+        "org": "BIGO LIVE",
+        "when": "2022",
+        "description": "Led the North America re-launch of Fans Group in BIGO LIVE, enabling creators to build and engage with their fanbase, and monetize their livestreaming content with subscription tiers. Increased feature adoption by 31% and first three-month engagement by 20%.",
+        "image": "/project-gamma.jpg"
+      }
+    ]
+  },
+  "speaking": {
+    "title": "Featured Speaking Engagements",
+    "items": [
+      {
+        "title": "The Importance of Safe Online Communities",
+        "type": "Panel Discussion",
+        "when": "2025 • Activision HQ - Santa Monica, CA",
+        "description": "Panel discussion as part of the Activision-wide Press Pause series. We chat about the importance of communities and representation in gaming, and what we are doing in our respective fields to create more welcoming online spaces.",
+        "image": "/speaking-1.jpg"
+      },
+      {
+        "title": "Tackling Disruptive Behavior: A Success Story",
+        "type": "Presentation",
+        "when": "2024 • Activision HQ - Santa Monica, CA",
+        "description": "Presentation as part of the Activision-wide Call of Duty Summit, discussing how a grassroots disruptive behavior approach evolved into an industry-leading effort for the Call of Duty franchise, and impact to the community.",
+        "image": "/speaking-2.jpg",
+        "imagePosition": "center 15%"
+      },
+      {
+        "title": "Inspiring the Next Generation of Leaders",
+        "type": "Guest Panel",
+        "when": "2024 • Activision HQ - Santa Monica, CA",
+        "description": "Guest panel as part of the Activision and Determined to Succeed (DTS) partnership (non-profit empowering underserved LA youth to graduate college), sharing paths to gaming and how product experiences and features are built.",
+        "image": "/speaking-4.jpeg"
+      },
+      {
+        "title": "Building Healthy Online Communities",
+        "type": "Lightning Talk",
+        "when": "2023 • Whistler, BC",
+        "description": "Lightning talk as part of the Demonware Summit, discussing how to identify and discourage disruptive behavior, and encourage prosocial behavior, including launched product experiences and impact on the community.",
+        "image": "/speaking-5-copy.jpeg",
+        "imagePosition": "center left"
+      },
+      {
+        "title": "Careers in Gaming",
+        "type": "Panel Discussion",
+        "when": "2023 • University of Southern California (USC) - Los Angeles, CA",
+        "description": "All-women guest panel discussion as part of the Activision and Frost Equity Initiative partnership Hispanic Heritage Month STEM Event. We discuss careers in gaming, how to thrive in gaming in a male-dominated industry.",
+        "image": "/speaking-3-copy.jpg"
+      }
+    ]
+  },
+  "mentorship": {
+    "title": "Product Mentorship",
+    "ctaTitle": "Ready to level up your product management skills?",
+    "badges": [
+      { "label": "Top 100 Product Mentor", "subLabel": "on ADPList", "image": "/adplist-top100.svg" }
+    ],
+    "copy": [
+      "Mastering core product skills separates good product managers from great ones. Working remotely with distributed teams has taught me that success depends on the fundamentals: compelling product strategy and roadmap, thoughtful prioritization that fits your unique context, effective stakeholder management, and iterative development.",
+      "What sets my mentorship apart is my commitment to practical, unfiltered guidance. I won't just tell you what you want to hear - I'll provide actionable feedback that helps you grow. Having mentored multiple PMs, I understand early-career challenges from building confidence to influencing without authority."
+    ],
+    "linkLabel": "Read more",
+    "linkUrl": "https://mentorcruise.com/blog/andrea-boonyarungsrit-77b1b/",
+    "helpList": [
+      "Develop skills to ship features from concept to completion with confidence",
+      "Create measurable success metrics and demonstrate your impact",
+      "Navigate cross-functional collaboration to avoid roadblocks"
+    ],
+    "expectList": [
+      "Evaluate your current PM skill gaps and prioritize your top goals",
+      "Collaborative 1:1 doc to sustain accountability and track progress",
+      "Timely, direct feedback to get you unstuck"
+    ],
+    "bookLabel": "Book a Mentorship Session",
+    "bookUrl": "https://mentors.to/andreaboon",
+    "trustedBy": {
+      "title": "Trusted by Professionals From",
+      "logos": [
+        { "alt": "Amazon", "image": "/logo-amazon.png", "logoClass": "amazon-logo", "tileClass": "logo-tile-light" },
+        { "alt": "Playstudios", "image": "/playstudios.svg" },
+        { "alt": "Glimpse", "image": "/glimpse.svg" },
+        { "alt": "Mirwork", "image": "/mirwork.svg" },
+        { "alt": "D. E. Shaw", "image": "/logo-deshaw.png", "logoClass": "deshaw-logo", "tileClass": "logo-tile-light" },
+        { "alt": "Rewiring America", "image": "/logo-rewiring-america.png", "logoClass": "rewiring-america-logo", "tileClass": "logo-tile-light" }
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "If you'd like to collaborate, email me at andreaboonyarungsrit@gmail(dot)com and let's talk!",
+    "email": "andreaboonyarungsrit@gmail.com"
+  },
+  "links": {
+    "linkedinUrl": "https://www.linkedin.com/in/penphobb/"
+  },
+  "testimonials": {
+    "title": "What Mentees Say",
+    "items": [
+      {
+        "quote": "Andrea is a genuinely caring mentor who takes the time to understand my unique values, strengths, and areas for growth. She helped me craft a personalized success roadmap and offered insightful guidance. Our weekly syncs were always motivating and empowering, giving me the clarity and confidence to navigate my transition from business analyst to product manager. Thanks to our three months of joint effort, I've successfully landed a role as an AI Product Manager. I'm deeply grateful for Andrea's mentorship, encouragement, and constant presence throughout this journey.",
+        "author": "Sonia",
+        "role": "AI Product Manager at Mirwork"
+      },
+      {
+        "quote": "Andrea helped me a lot during our time of mentorship. I looked for this mentorship as career change path, from more Game Development and Game Design roles to Product Management. Her experience was a really solid in the area and guided me to understand not only the implications of Product management in video games but also how to guide my former experience, in crafting a solid base to look on, and progress through this path.",
+        "author": "Simón",
+        "role": "Former LiveOps Designer at Playstudios"
+      },
+      {
+        "quote": "Thank you Andrea for the interesting chat, and for being so kind and available in solving my doubts and providing actionable feedback. I'll book another slot later in the future!",
+        "author": "Michele",
+        "role": "Founder at Material"
+      },
+      {
+        "quote": "I am incredibly grateful to Andrea for her exceptional mentorship and guidance during my job-seeking journey. Her ability to deeply understand my challenges and offer tailored solutions was truly remarkable. She helped me identify key areas to focus on, both professionally and personally, and provided invaluable insights into the job market. Her thorough analysis of my resume and constructive feedback was instrumental in presenting my profile more effectively.",
+        "author": "Mayank",
+        "role": "Product Manager at ODDSworks"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2026 Andrea Boonyarungsrit. All rights reserved."
+  }
+}
+

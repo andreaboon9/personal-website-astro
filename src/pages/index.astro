@@ -1,0 +1,414 @@
+---
+import Base from "../layouts/Base.astro";
+import site from "../content/site.json";
+
+const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, links, footer } = site;
+---
+<Base>
+  <header class="header">
+    <div class="header-content">
+      <a class="logo-text" href="#top">ANDREA BOONYARUNGSRIT</a>
+
+      <nav class="desktop-nav" aria-label="Primary">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#ai-projects">AI Projects</a>
+        <a class="nav-link" href="#work">Work</a>
+        <a class="nav-link" href="#mentorship">Mentorship</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-right">
+        <a class="social-header" href={links.linkedinUrl} target="_blank" rel="noreferrer" aria-label="LinkedIn Profile">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1c1.38 0 2.5 1.12 2.5 2.5ZM.5 23.5h4V7.98h-4V23.5ZM8 7.98h3.83v2.12h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.09v7.37h-4v-6.54c0-1.56-.03-3.57-2.18-3.57-2.19 0-2.52 1.7-2.52 3.46v6.65H8V7.98Z"/>
+          </svg>
+        </a>
+
+        <button class="hamburger-button" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="menu-backdrop" aria-hidden="true"></div>
+    <div class="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-content">
+        <div class="menu-handle" aria-hidden="true"></div>
+        <a class="mobile-nav-link" href="#about">About</a>
+        <a class="mobile-nav-link" href="#ai-projects">AI Projects</a>
+        <a class="mobile-nav-link" href="#work">Work</a>
+        <a class="mobile-nav-link" href="#mentorship">Mentorship</a>
+        <a class="mobile-nav-link" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section id="about" class="hero">
+      <div class="hero-content hero-entrance">
+        <div class="hero-image-section hero-image-entrance">
+          <div class="hero-image">
+            <img src={hero.heroImage} alt="" loading="eager" />
+          </div>
+        </div>
+        <div class="hero-text">
+          <h1><span>{hero.headline}</span> <span class="cursor">_</span></h1>
+          <p class="hero-subtitle">{hero.subheadline}</p>
+          <p class="hero-bio">{hero.bio}</p>
+          <p class="hero-bio">{hero.highlights}</p>
+          <p class="hero-location">{hero.locationLine}</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai-projects" class="ai-projects-section section animate-on-scroll">
+      <h2>{aiProjects.title}</h2>
+      <h3>Featured Projects</h3>
+      <div class="projects-list">
+        {aiProjects.items.map((p) => (
+          <div class="project-wrapper">
+            <article class="project-card card-base">
+              <div class="project-image">
+                <img src={p.image} alt="" loading="lazy" />
+              </div>
+              <div class="project-content">
+                <h4 class="project-title">{p.title}</h4>
+                <div class="project-company">{p.tagline}</div>
+                <div class="project-date">{p.year}</div>
+                <p class="project-description">{p.description}</p>
+                {p.linkUrl ? (
+                  <a class="button-base project-cta" href={p.linkUrl} target="_blank" rel="noreferrer">{p.linkLabel ?? "View →"}</a>
+                ) : null}
+              </div>
+            </article>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="work" class="projects-section section animate-on-scroll">
+      <h2>{work.title}</h2>
+      <h3>Featured Projects</h3>
+      <div class="projects-list">
+        {work.items.map((w) => (
+          <div class="project-wrapper">
+            <article class="project-card card-base">
+              {w.image ? (
+                <div class="project-image">
+                  <img src={w.image} alt="" loading="lazy" />
+                </div>
+              ) : null}
+              <div class="project-content">
+                <h4 class="project-title">{w.title}</h4>
+                <div class="project-company">{w.org}</div>
+                <div class="project-date">{w.when}</div>
+                <p class="project-description">{w.description}</p>
+              </div>
+            </article>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="speaking-engagements-heading">Featured Speaking Engagements</h3>
+      <div class="projects-list">
+        {speaking.items.map((s) => (
+          <div class="project-wrapper">
+            <article class="project-card card-base">
+              <div class="project-image">
+                <img
+                  src={s.image}
+                  alt=""
+                  loading="lazy"
+                  style={s.imagePosition ? `object-position: ${s.imagePosition}` : undefined}
+                />
+              </div>
+              <div class="project-content">
+                <h4 class="project-title">{s.title}</h4>
+                <div class="project-company">{s.type}</div>
+                <div class="project-date">{s.when}</div>
+                <p class="project-description">{s.description}</p>
+              </div>
+            </article>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section id="mentorship" class="mentorship-section section animate-on-scroll">
+      <h2 class="mentorship-heading">{mentorship.title}</h2>
+      <h3>{mentorship.ctaTitle}</h3>
+
+      {mentorship.badges.map((b) => (
+        <div class="achievement-badge">
+          <div class="badge-container">
+            <img class="badge-image" src={b.image} alt={b.label} loading="lazy" />
+          </div>
+          <div class="badge-text">
+            <h4>{b.label}</h4>
+            <p>{b.subLabel}</p>
+          </div>
+        </div>
+      ))}
+
+      <div class="mentorship-intro">
+        {mentorship.copy.map((p) => <p class="description-text">{p}</p>)}
+        <a class="read-more-link" href={mentorship.linkUrl} target="_blank" rel="noreferrer">
+          {mentorship.linkLabel} <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <h3>I can help you</h3>
+      <div class="mentorship-list" role="list">
+        {mentorship.helpList.map((x, i) => (
+          <div class="mentorship-item" role="listitem">
+            {i === 0 ? (
+              <svg class="icon-base" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M12 2a9 9 0 1 0 9 9h-2a7 7 0 1 1-7-7V2Zm1 4h-2v7l5.2 3.1 1-1.7-4.2-2.4V6Z"/>
+              </svg>
+            ) : i === 1 ? (
+              <svg class="icon-base" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M3 17h2v-7H3v7Zm4 0h2V7H7v10Zm4 0h2v-4h-2v4Zm4 0h2V4h-2v13Zm4 0h2V11h-2v6Z"/>
+              </svg>
+            ) : (
+              <svg class="icon-base" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M12 3 2 9l10 6 10-6-10-6Zm0 8.2L5.6 9 12 5.8 18.4 9 12 11.2ZM4 12.5V17l8 4 8-4v-4.5l-8 4-8-4Z"/>
+              </svg>
+            )}
+            <span>{x}</span>
+          </div>
+        ))}
+      </div>
+
+      <h3>What you can expect from me</h3>
+      <div class="mentorship-list" role="list">
+        {mentorship.expectList.map((x, i) => (
+          <div class="mentorship-item" role="listitem">
+            {i === 0 ? (
+              <svg class="icon-base" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/>
+              </svg>
+            ) : i === 1 ? (
+              <svg class="icon-base" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v14l4-4h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm0 10H6.2L5 14.2V5h14v8Z"/>
+              </svg>
+            ) : (
+              <svg class="icon-base" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9Zm1 13h-2v-2h2Zm0-4h-2V7h2Z"/>
+              </svg>
+            )}
+            <span>{x}</span>
+          </div>
+        ))}
+      </div>
+
+      <div class="mentorship-cta">
+        <a class="button-base" href={mentorship.bookUrl} target="_blank" rel="noreferrer">{mentorship.bookLabel}</a>
+      </div>
+
+      <div class="trusted-section">
+        <h3>{mentorship.trustedBy.title}</h3>
+        <div class="logos-container">
+          <div class="company-logos">
+            {mentorship.trustedBy.logos.map((l) => {
+              const slug = `${l.alt}`.toLowerCase().replace(/\s+/g, "").replace(/[^a-z0-9]/g, "");
+              const imgClass = l.logoClass ? `logo-image ${l.logoClass}` : `logo-image ${slug}-logo`;
+              return (
+                <div class:list={["logo-item", l.tileClass]}>
+                  <img class={imgClass} src={l.image} alt={l.alt} loading="lazy" />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <h3 class="testimonials-heading">{testimonials.title}</h3>
+      <div class="testimonials-carousel" aria-roledescription="carousel">
+        <div class="testimonial-track">
+          {testimonials.items.map((t, idx) => (
+            <div class={`testimonial-slide ${idx === 0 ? "is-active" : ""}`} aria-hidden={idx === 0 ? "false" : "true"}>
+              <div class="testimonial-wrapper">
+                <div class="testimonial-border">
+                  <article class="testimonial-card">
+                    <div class="testimonial-content">
+                      <div class="quote-mark">“</div>
+                      <p class="testimonial-text">{t.quote}</p>
+                      <p class="testimonial-author">
+                        <strong>{t.author}</strong>
+                        <span>{t.role}</span>
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="testimonial-pagination" aria-label="Testimonials">
+          {testimonials.items.map((_, idx) => (
+            <button
+              class={`testimonial-dot ${idx === 0 ? "is-active" : ""}`}
+              type="button"
+              aria-label={`Show testimonial ${idx + 1}`}
+              data-dot={idx}
+            ></button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section section animate-on-scroll">
+      <h2>{contact.title}</h2>
+      <p>{contact.intro}</p>
+
+      <form class="form-base" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="netlify-honeypot" aria-hidden="true">
+          <input name="bot-field" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" class="form-input" name="name" type="text" placeholder="Your name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" class="form-input" name="email" type="email" placeholder="your.email@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input id="subject" class="form-input" name="subject" type="text" placeholder="What would you like to discuss?" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" class="form-input" name="message" rows="6" placeholder="Your message here..." required></textarea>
+        </div>
+
+        <button class="button-base" type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <nav class="footer-nav" aria-label="Footer">
+          <a class="footer-link" href="#about">About</a>
+          <a class="footer-link" href="#ai-projects">AI Projects</a>
+          <a class="footer-link" href="#work">Work</a>
+          <a class="footer-link" href="#mentorship">Mentorship</a>
+          <a class="footer-link" href="#contact">Contact</a>
+        </nav>
+
+        <div class="footer-social-section" aria-label="Links">
+          <a class="social-icon-link" href={`mailto:${contact.email}`} aria-label="Send Email">
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
+            </svg>
+          </a>
+          <a class="social-icon-link" href={links.linkedinUrl} target="_blank" rel="noreferrer" aria-label="LinkedIn Profile">
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1c1.38 0 2.5 1.12 2.5 2.5ZM.5 23.5h4V7.98h-4V23.5ZM8 7.98h3.83v2.12h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.09v7.37h-4v-6.54c0-1.56-.03-3.57-2.18-3.57-2.19 0-2.52 1.7-2.52 3.46v6.65H8V7.98Z"/>
+            </svg>
+          </a>
+          <a class="social-icon-link" href="https://mentorcruise.com/blog/andrea-boonyarungsrit-77b1b/" target="_blank" rel="noreferrer" aria-label="MentorCruise Profile">
+            <!-- Sailboat icon to match the MentorCruise-style mark -->
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 2v11h7L12 2Z" />
+              <path fill="currentColor" d="M11 4.2 4.3 13H11V4.2Z" />
+              <path fill="currentColor" d="M3 15h18c-1.4 3.9-4.9 6.5-9 6.5S4.4 18.9 3 15Z" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="copyright">{footer.copyright}</div>
+      </div>
+    </footer>
+  </main>
+
+  <button class="scroll-to-top-btn" type="button" aria-label="Scroll to top">
+    <span class="scroll-icon">↑</span>
+  </button>
+
+  <script>
+    const btn = document.querySelector(".hamburger-button");
+    const backdrop = document.querySelector(".menu-backdrop");
+    const menu = document.querySelector(".mobile-menu");
+    const scrollTopBtn = document.querySelector(".scroll-to-top-btn");
+
+    function setMenu(open) {
+      if (!btn || !backdrop || !menu) return;
+      btn.classList.toggle("active", open);
+      backdrop.classList.toggle("active", open);
+      menu.classList.toggle("active", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      backdrop.setAttribute("aria-hidden", open ? "false" : "true");
+      menu.setAttribute("aria-hidden", open ? "false" : "true");
+    }
+
+    btn?.addEventListener("click", () => setMenu(!btn.classList.contains("active")));
+    backdrop?.addEventListener("click", () => setMenu(false));
+    menu?.addEventListener("click", (e) => {
+      const t = e.target;
+      if (t && t instanceof HTMLElement && t.matches("a.mobile-nav-link")) setMenu(false);
+    });
+
+    scrollTopBtn?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+    // The original site reveals sections via JS. Recreate that so content isn't hidden.
+    const reveal = (el) => el.classList.add("animate-in");
+    const animated = Array.from(document.querySelectorAll(".animate-on-scroll"));
+
+    // Always reveal everything shortly after load so nothing looks "missing".
+    window.setTimeout(() => {
+      for (const el of animated) reveal(el);
+    }, 50);
+
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              reveal(entry.target);
+              io.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold: 0.15 }
+      );
+      for (const el of animated) io.observe(el);
+    } else {
+      for (const el of animated) reveal(el);
+    }
+
+    // 6) Testimonials: subtle automatic carousel with dots (every 5s).
+    const slides = Array.from(document.querySelectorAll(".testimonial-slide"));
+    const dots = Array.from(document.querySelectorAll(".testimonial-dot"));
+    let active = 0;
+
+    function setActive(next) {
+      active = (next + slides.length) % slides.length;
+      slides.forEach((el, i) => {
+        const on = i === active;
+        el.classList.toggle("is-active", on);
+        el.setAttribute("aria-hidden", on ? "false" : "true");
+      });
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === active));
+    }
+
+    dots.forEach((d) => {
+      d.addEventListener("click", () => {
+        const idx = Number(d.getAttribute("data-dot") || "0");
+        setActive(idx);
+      });
+    });
+
+    if (slides.length > 1) {
+      window.setInterval(() => setActive(active + 1), 5000);
+    }
+  </script>
+</Base>
+

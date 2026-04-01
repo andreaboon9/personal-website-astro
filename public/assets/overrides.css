@@ -1,0 +1,213 @@
+/* Cursor/Astro overrides to match original screenshots */
+
+/* 1) Hero headline gradient across full text */
+.hero h1 > span:first-child {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 3) Make "View demo" CTA prominent like original */
+.project-cta {
+  margin-top: 1.5rem;
+  align-self: flex-start;
+  padding: 0.9rem 2.25rem;
+  border-radius: 16px;
+  font-size: 1rem;
+  box-shadow: var(--shadow-md), 0 0 24px rgba(127, 255, 212, 0.18);
+}
+.project-cta:hover {
+  box-shadow: var(--shadow-lg), 0 0 32px rgba(127, 255, 212, 0.28);
+}
+
+/* 1) Indentation/text alignment inside tiles (don't let .section p center them) */
+.project-content .project-title,
+.project-content .project-company,
+.project-content .project-date,
+.project-content .project-description{
+  text-align: left !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* 2) Ensure project images always render (guard against global img resets) */
+.project-image img{
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* 3) Mentorship read-more link should look like green "Read more →" */
+.mentorship-intro .read-more-link{
+  color: var(--mint);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-wide);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.mentorship-intro .read-more-link:hover{
+  color: #5dffb8;
+  text-shadow: 0 0 10px rgba(127,255,212,.35);
+}
+
+/* 5) Glimpse + MirWork visibility (subtle lift) */
+.glimpse-logo,
+.mirwork-logo{
+  filter: invert(1) brightness(0.9) contrast(1.05) drop-shadow(0 2px 8px rgba(0,0,0,0.35)) !important;
+  opacity: 0.78 !important;
+}
+
+/* Product mentorship: left-aligned intro + badge (not centered) */
+#mentorship.mentorship-section .mentorship-heading,
+#mentorship.mentorship-section > h3:not(.testimonials-heading) {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+#mentorship.mentorship-section > h3.testimonials-heading {
+  text-align: center !important;
+}
+#mentorship.mentorship-section .trusted-section h3 {
+  text-align: left !important;
+}
+#mentorship.mentorship-section .achievement-badge {
+  align-items: flex-start !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  max-width: 100% !important;
+}
+#mentorship.mentorship-section .badge-text h4,
+#mentorship.mentorship-section .badge-text p {
+  text-align: left !important;
+}
+#mentorship.mentorship-section .mentorship-intro,
+#mentorship.mentorship-section .mentorship-intro .description-text {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: none !important;
+}
+#mentorship.section p.description-text {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: none !important;
+}
+
+/* Trusted-by: light tile for full-color / light-background marks (Amazon, D.E. Shaw, Rewiring America) */
+.logo-tile-light {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  box-sizing: border-box !important;
+  padding: 10px 16px !important;
+}
+.company-logos .logo-item .logo-image {
+  max-height: 36px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+}
+
+/* 6) Testimonials: single-card carousel layout (no scroll strip) */
+.testimonials-carousel{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+.testimonial-track{ position: relative; }
+.testimonial-slide{ display:none; }
+.testimonial-slide.is-active{ display:block; }
+.testimonial-pagination{
+  display:flex;
+  justify-content:center;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+.testimonial-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(127,255,212,.22);
+  opacity: 0.6;
+  transition: transform .25s ease, opacity .25s ease, background .25s ease;
+}
+.testimonial-dot.is-active{
+  background: var(--mint);
+  opacity: 1;
+  transform: scale(1.35);
+  box-shadow: 0 0 18px rgba(127,255,212,.35);
+}
+
+/* 7) Footer icon links row */
+.footer-social-section{
+  display:flex;
+  justify-content:center;
+  gap: 2rem;
+}
+.social-icon-link{
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(127,255,212,.12);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.social-icon-link:hover{
+  transform: translateY(-3px);
+  border-color: rgba(127,255,212,.35);
+  box-shadow: 0 10px 32px rgba(0,0,0,.35), 0 0 22px rgba(127,255,212,.14);
+  background: rgba(255,255,255,.09);
+}
+
+/* 6) Trusted logos: more professional, no grey overlay */
+.company-logos {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 1.25rem 0 !important;
+  gap: 3.5rem !important;
+}
+.company-logos:before {
+  display: none !important;
+}
+.logo-item {
+  width: 180px;
+  height: 64px;
+}
+.logo-image {
+  opacity: 1 !important;
+}
+
+/* (removed scroll-strip layout; see carousel layout above) */
+
+/* 8) Netlify honeypot should never appear */
+.netlify-honeypot {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .testimonials-carousel { padding: 0 1rem 3rem; }
+  .logo-item {
+    width: 150px;
+    height: 56px;
+  }
+  .footer-social-section{ gap: 1.25rem; }
+  .social-icon-link{ width: 52px; height: 52px; border-radius: 14px; }
+}
+
