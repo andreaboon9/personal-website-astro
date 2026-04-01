@@ -56,16 +56,39 @@
   text-shadow: 0 0 10px rgba(127,255,212,.35);
 }
 
-/* 5) Glimpse + MirWork visibility (subtle lift) */
+/* Glimpse + MirWork on dark backgrounds only (trusted pills override below) */
 .glimpse-logo,
 .mirwork-logo{
   filter: invert(1) brightness(0.9) contrast(1.05) drop-shadow(0 2px 8px rgba(0,0,0,0.35)) !important;
   opacity: 0.78 !important;
 }
 
-/* Product mentorship: left-aligned intro + badge (not centered) */
-#mentorship.mentorship-section .mentorship-heading,
-#mentorship.mentorship-section > h3:not(.testimonials-heading) {
+/* Product mentorship: center hero line + badge; keep body copy and later headings left */
+#mentorship.mentorship-section .mentorship-heading {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+#mentorship.mentorship-section .mentorship-cta-heading {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: min(92vw, 38rem) !important;
+  line-height: 1.22 !important;
+  text-wrap: balance;
+}
+#mentorship.mentorship-section .mentorship-hero-badge {
+  align-items: center !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 320px !important;
+}
+#mentorship.mentorship-section .mentorship-hero-badge .badge-text h4,
+#mentorship.mentorship-section .mentorship-hero-badge .badge-text p {
+  text-align: center !important;
+}
+#mentorship.mentorship-section > h3:not(.testimonials-heading):not(.mentorship-cta-heading) {
   text-align: left !important;
   margin-left: 0 !important;
   margin-right: auto !important;
@@ -74,18 +97,9 @@
   text-align: center !important;
 }
 #mentorship.mentorship-section .trusted-section h3 {
-  text-align: left !important;
-}
-#mentorship.mentorship-section .achievement-badge {
-  align-items: flex-start !important;
-  text-align: left !important;
-  margin-left: 0 !important;
+  text-align: center !important;
+  margin-left: auto !important;
   margin-right: auto !important;
-  max-width: 100% !important;
-}
-#mentorship.mentorship-section .badge-text h4,
-#mentorship.mentorship-section .badge-text p {
-  text-align: left !important;
 }
 #mentorship.mentorship-section .mentorship-intro,
 #mentorship.mentorship-section .mentorship-intro .description-text {
@@ -105,19 +119,78 @@
   max-width: none !important;
 }
 
-/* Trusted-by: light tile for full-color / light-background marks (Amazon, D.E. Shaw, Rewiring America) */
-.logo-tile-light {
-  background: rgba(255, 255, 255, 0.94) !important;
-  border-radius: 12px !important;
-  border: 1px solid rgba(0, 0, 0, 0.06) !important;
-  box-sizing: border-box !important;
-  padding: 10px 16px !important;
+/* Trusted-by: 3 columns, centered; uniform pills */
+.logos-container {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
 }
-.company-logos .logo-item .logo-image {
-  max-height: 36px !important;
+.company-logos {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 1rem 1.1rem !important;
+  justify-items: stretch !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  max-width: 720px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 1.25rem 1rem !important;
+  box-sizing: border-box !important;
+}
+/* One solid pill color everywhere (no rgba drift) so logos blend consistently */
+.company-logos .logo-item.logo-pill {
+  width: 100% !important;
+  max-width: none !important;
+  height: 56px !important;
+  min-height: 56px !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  padding: 0 0.85rem !important;
+  background: #f4f6f5 !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+  isolation: isolate !important;
+}
+.company-logos .logo-item.logo-pill .logo-image {
+  max-height: 28px !important;
   width: auto !important;
   max-width: 100% !important;
   object-fit: contain !important;
+  opacity: 1 !important;
+}
+/* PNG/SVG marks on light pill (assets use transparency; no matte boxes) */
+.company-logos .logo-item.logo-pill .amazon-logo,
+.company-logos .logo-item.logo-pill .deshaw-logo,
+.company-logos .logo-item.logo-pill .rewiring-america-logo,
+.company-logos .logo-item.logo-pill .playstudios-logo {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+.company-logos .logo-item.logo-pill .playstudios-logo {
+  max-height: 40px !important;
+}
+.company-logos .logo-item.logo-pill .amazon-logo {
+  max-height: 28px !important;
+}
+.company-logos .logo-item.logo-pill .rewiring-america-logo {
+  max-height: 24px !important;
+}
+.company-logos .logo-item.logo-pill .deshaw-logo {
+  max-height: 26px !important;
+}
+/* Light SVG marks on white pill → dark ink */
+.company-logos .logo-item.logo-pill .glimpse-logo,
+.company-logos .logo-item.logo-pill .mirwork-logo {
+  filter: brightness(0) saturate(100%) opacity(0.88) !important;
+  opacity: 1 !important;
 }
 
 /* 6) Testimonials: single-card carousel layout (no scroll strip) */
@@ -175,18 +248,11 @@
   background: rgba(255,255,255,.09);
 }
 
-/* 6) Trusted logos: more professional, no grey overlay */
-.company-logos {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 1.25rem 0 !important;
-  gap: 3.5rem !important;
-}
+/* Trusted logos strip: no outer glass panel */
 .company-logos:before {
   display: none !important;
 }
-.logo-item {
+.logo-item:not(.logo-pill) {
   width: 180px;
   height: 64px;
 }
@@ -203,7 +269,12 @@
 
 @media (max-width: 768px) {
   .testimonials-carousel { padding: 0 1rem 3rem; }
-  .logo-item {
+  .company-logos .logo-item.logo-pill {
+    max-width: none !important;
+    height: 52px !important;
+    min-height: 52px !important;
+  }
+  .logo-item:not(.logo-pill) {
     width: 150px;
     height: 56px;
   }

@@ -19,8 +19,30 @@ const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, lin
 
       <div class="header-right">
         <a class="social-header" href={links.linkedinUrl} target="_blank" rel="noreferrer" aria-label="LinkedIn Profile">
+          <!-- Font Awesome 6 brands / CC BY 4.0 — standard “in” square mark -->
+          <svg class="social-icon" viewBox="0 0 448 512" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+            />
+          </svg>
+        </a>
+        <a class="social-header" href={links.githubUrl} target="_blank" rel="noreferrer" aria-label="GitHub Profile">
+          <svg class="social-icon" viewBox="0 0 98 96" aria-hidden="true">
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.195-22.23-5.378-22.23-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+            />
+          </svg>
+        </a>
+        <a class="social-header" href={links.portfolioUrl} target="_blank" rel="noreferrer" aria-label="Portfolio website">
           <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1c1.38 0 2.5 1.12 2.5 2.5ZM.5 23.5h4V7.98h-4V23.5ZM8 7.98h3.83v2.12h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.09v7.37h-4v-6.54c0-1.56-.03-3.57-2.18-3.57-2.19 0-2.52 1.7-2.52 3.46v6.65H8V7.98Z"/>
+            <path
+              fill="currentColor"
+              d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm7.93 9h-3.35a15.65 15.65 0 0 0-1.08-4.5A8.03 8.03 0 0 1 19.93 11ZM12 4.07a14.1 14.1 0 0 1 2.91 3.43H9.09A14.1 14.1 0 0 1 12 4.07ZM7.5 6.5c-.49 1.4-.84 2.9-1.08 4.5H3.07a8.03 8.03 0 0 1 4.43-4.5ZM3.07 13h3.35c.24 1.6.59 3.1 1.08 4.5a8.03 8.03 0 0 1-4.43-4.5ZM12 19.93A14.1 14.1 0 0 1 9.09 16.5h5.82A14.1 14.1 0 0 1 12 19.93Zm2.41-5.43H9.59a13.7 13.7 0 0 1-.01-4.92h4.83a13.7 13.7 0 0 1-.01 4.92Zm2.98 1.93c.49-1.4.84-2.9 1.07-4.5h3.36a8.03 8.03 0 0 1-4.43 4.5Z"
+            />
           </svg>
         </a>
 
@@ -79,7 +101,7 @@ const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, lin
                 <div class="project-date">{p.year}</div>
                 <p class="project-description">{p.description}</p>
                 {p.linkUrl ? (
-                  <a class="button-base project-cta" href={p.linkUrl} target="_blank" rel="noreferrer">{p.linkLabel ?? "View →"}</a>
+                  <a class="button-base project-cta" href={p.linkUrl} target="_blank" rel="noreferrer">{p.linkLabel ?? "View demo"}</a>
                 ) : null}
               </div>
             </article>
@@ -138,10 +160,10 @@ const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, lin
 
     <section id="mentorship" class="mentorship-section section animate-on-scroll">
       <h2 class="mentorship-heading">{mentorship.title}</h2>
-      <h3>{mentorship.ctaTitle}</h3>
+      <h3 class="mentorship-cta-heading">{mentorship.ctaTitle}</h3>
 
       {mentorship.badges.map((b) => (
-        <div class="achievement-badge">
+        <div class="achievement-badge mentorship-hero-badge">
           <div class="badge-container">
             <img class="badge-image" src={b.image} alt={b.label} loading="lazy" />
           </div>
@@ -215,7 +237,7 @@ const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, lin
               const slug = `${l.alt}`.toLowerCase().replace(/\s+/g, "").replace(/[^a-z0-9]/g, "");
               const imgClass = l.logoClass ? `logo-image ${l.logoClass}` : `logo-image ${slug}-logo`;
               return (
-                <div class:list={["logo-item", l.tileClass]}>
+                <div class="logo-item logo-pill">
                   <img class={imgClass} src={l.image} alt={l.alt} loading="lazy" />
                 </div>
               );
@@ -310,11 +332,39 @@ const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, lin
             </svg>
           </a>
           <a class="social-icon-link" href={links.linkedinUrl} target="_blank" rel="noreferrer" aria-label="LinkedIn Profile">
-            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.48 1c1.38 0 2.5 1.12 2.5 2.5ZM.5 23.5h4V7.98h-4V23.5ZM8 7.98h3.83v2.12h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.09v7.37h-4v-6.54c0-1.56-.03-3.57-2.18-3.57-2.19 0-2.52 1.7-2.52 3.46v6.65H8V7.98Z"/>
+            <svg class="social-icon" viewBox="0 0 448 512" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+              />
             </svg>
           </a>
-          <a class="social-icon-link" href="https://mentorcruise.com/blog/andrea-boonyarungsrit-77b1b/" target="_blank" rel="noreferrer" aria-label="MentorCruise Profile">
+          <a class="social-icon-link" href={links.githubUrl} target="_blank" rel="noreferrer" aria-label="GitHub Profile">
+            <svg class="social-icon" viewBox="0 0 98 96" aria-hidden="true">
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.195-22.23-5.378-22.23-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+              />
+            </svg>
+          </a>
+          <a class="social-icon-link" href={links.portfolioUrl} target="_blank" rel="noreferrer" aria-label="Portfolio website">
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm7.93 9h-3.35a15.65 15.65 0 0 0-1.08-4.5A8.03 8.03 0 0 1 19.93 11ZM12 4.07a14.1 14.1 0 0 1 2.91 3.43H9.09A14.1 14.1 0 0 1 12 4.07ZM7.5 6.5c-.49 1.4-.84 2.9-1.08 4.5H3.07a8.03 8.03 0 0 1 4.43-4.5ZM3.07 13h3.35c.24 1.6.59 3.1 1.08 4.5a8.03 8.03 0 0 1-4.43-4.5ZM12 19.93A14.1 14.1 0 0 1 9.09 16.5h5.82A14.1 14.1 0 0 1 12 19.93Zm2.41-5.43H9.59a13.7 13.7 0 0 1-.01-4.92h4.83a13.7 13.7 0 0 1-.01 4.92Zm2.98 1.93c.49-1.4.84-2.9 1.07-4.5h3.36a8.03 8.03 0 0 1-4.43 4.5Z"
+              />
+            </svg>
+          </a>
+          {links.resumeUrl ? (
+            <a class="social-icon-link" href={links.resumeUrl} target="_blank" rel="noreferrer" aria-label="Resume PDF">
+              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm4 18H6V4h7v5h5v11Z" />
+              </svg>
+            </a>
+          ) : null}
+          <a class="social-icon-link" href={links.mentorCruiseProfileUrl} target="_blank" rel="noreferrer" aria-label="MentorCruise profile">
             <!-- Sailboat icon to match the MentorCruise-style mark -->
             <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor" d="M12 2v11h7L12 2Z" />

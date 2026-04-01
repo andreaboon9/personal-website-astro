@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://frolicking-gnome-e7dbad.netlify.app/",
+  site: "https://andreaboon.netlify.app/",
 });
 
