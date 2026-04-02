@@ -4,7 +4,7 @@
 
 Edit copy and lists in **`src/content/site.json`**. Layout and styles live under `src/` and `public/`.
 
-**Links:** `links.portfolioUrl`, `links.linkedinUrl`, `links.githubUrl`, and `links.mentorCruiseProfileUrl` feed the header/footer. Set **`links.resumeUrl`** to a public PDF URL when you want a resume icon in the footer (leave `""` to hide it).
+**Links:** `links.linkedinUrl` and `links.githubUrl` feed the header; the footer adds email, those two, optional **`links.resumeUrl`** (PDF), and **`links.mentorCruiseProfileUrl`**. `links.portfolioUrl` is kept in JSON for canonical URL / off-site checklists only (not shown as a header/footer icon).
 
 **LinkedIn + resume alignment:** See **`job-search/offsite-visibility-checklist.md`** in the repo root.
 

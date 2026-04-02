@@ -57,32 +57,81 @@
     "title": "Work",
     "items": [
       {
+        "title": "Positive Play Strategy & Measurement",
+        "org": "ACTIVISION",
+        "when": "2025 • Call of Duty: Black Ops 7, Call of Duty: Black Ops 6, Call of Duty: Warzone",
+        "description": "Architected Call of Duty Positive Play as a 0→1 franchise strategy, shifting from moderation-only to proactive, player-facing design. Established a measurement framework to identify prosocial voice, text and gameplay signals that correlate with higher re-engagement, and used that to prioritize where to invest first.",
+        "image": "/positive-play.png",
+        "linkLabel": "View coverage",
+        "linkUrl": "https://www.callofduty.com/blog/2025/11/call-of-duty-black-ops-7-black-ops-6-warzone-player-safety-positive-play"
+      },
+      {
         "title": "Voice Chat Enhancements",
         "org": "ACTIVISION",
         "when": "2024 • Call of Duty: Modern Warfare III, Call of Duty: Warzone",
-        "description": "Led voice-chat safety and enforcement across Call of Duty—Feature Ban 408 (broadcast restrictions and in-match UX), improved enforcement-duration logic with dynamic locks, and measurement loops with Global Analytics—while keeping competitive integrity and studio alignment. Franchise metrics included a 67% reduction in repeat voice offenders and a 43% drop in disruptive voice exposure (MWIII + Warzone, 2024 cohorts).",
-        "image": "/project-alpha.jpeg"
+        "description": "Led development of voice chat enforcement improvements while sustaining competitive spirit. Publicly reported results include a combined 67% reduction in repeat offenders (MWIII + Warzone) after improved voice enforcement in June 2024, 80% of enforced players not re-offending (July 2024), and exposure to disruptive voice chat dropping by 43% since January 2024.",
+        "image": "/project-alpha.jpeg",
+        "linkLabel": "View coverage",
+        "linkUrl": "https://www.callofduty.com/blog/2024/10/call-of-duty-anti-toxicity-progress-report-black-ops-6-moderation-results",
+        "asSeenIn": {
+          "label": "As seen in",
+          "image": "/fastcompany-logo.png",
+          "alt": "Fast Company",
+          "linkUrl": "https://www.fastcompany.com/91039689/activision-blizzard-most-innovative-companies-2024"
+        }
       },
       {
         "title": "AI-Powered Voice Moderation System",
         "org": "ACTIVISION",
         "when": "2023 • Call of Duty: Modern Warfare II, Call of Duty: Warzone",
-        "description": "Led product for real-time AI voice moderation (Modulate/ToxMod): rollout strategy across titles, Cerberus and split-population experimentation, and exposure/repeat-offense metrics—partnering with studios, production, Global Analytics, and Finance on coverage vs cost. At MWIII launch, roughly half as many players saw severe voice toxicity vs prior (directional internal measure). Contributed to Activision being named one of Fast Company’s most innovative gaming companies (2024).",
-        "image": "/project-beta.jpg"
+        "description": "Led launch of Call of Duty’s in-game AI voice chat moderation partnership with Modulate (ToxMod), with a public rollout beginning in North America (beta) and expanding to a global release (excluding Asia-Pacific) alongside MWIII. This system identifies and enforces against toxic speech in real time (e.g., hate speech, discriminatory language, harassment).",
+        "image": "/project-beta.jpg",
+        "linkLabel": "View coverage",
+        "linkUrl": "https://www.callofduty.com/blog/2023/08/call-of-duty-modern-warfare-warzone-anti-toxicity-progress-report"
       },
       {
         "title": "Community Engagement Features",
         "org": "BIGO LIVE",
         "when": "2022",
         "description": "Led North America GTM strategy of Communities in BIGO LIVE, enabling users to create and manage online communities, and creators to build a following or grow their existing fanbase. Increased feature adoption by 320% and first three-month engagement by 24%.",
-        "image": "/project-delta.jpg"
+        "image": "/project-delta.jpg",
+        "linkLabel": "View coverage",
+        "linkUrl": "https://marketech-apac.com/bigo-live-unveils-new-interactive-community-feature/"
       },
       {
         "title": "Creator Features",
         "org": "BIGO LIVE",
         "when": "2022",
         "description": "Led the North America re-launch of Fans Group in BIGO LIVE, enabling creators to build and engage with their fanbase, and monetize their livestreaming content with subscription tiers. Increased feature adoption by 31% and first three-month engagement by 20%.",
-        "image": "/project-gamma.jpg"
+        "image": "/project-gamma.jpg",
+        "linkLabel": "View coverage",
+        "linkUrl": "https://www.dexerto.com/entertainment/how-500-streamers-achieved-1-million-followers-on-bigo-live-in-2021-1736997/"
+      }
+    ]
+  },
+  "publications": {
+    "title": "Publications",
+    "items": [
+      {
+        "title": "Prosocial Behavior Detection in Player Game Chat",
+        "venue": "arXiv (2025)",
+        "description": "Co-developed a three-stage human–AI pipeline to define, label, and deploy prosocial behavior classifiers where no established ground truth existed, including a human–LLM disagreement loop and a two-tier inference system that reduced inference costs by ~70% while maintaining ~0.90 precision.",
+        "linkLabel": "Read on arXiv",
+        "linkUrl": "https://arxiv.org/abs/2508.05938v1"
+      },
+      {
+        "title": "Self-Anchored Attention Model for Prosocial Text Chat",
+        "venue": "arXiv (2025)",
+        "description": "Co-developed an automated system to detect and classify prosocial behavior in in-game text chat at scale; contributed product direction for a self-anchored attention model improving classification accuracy by ~7.9% in low-data settings.",
+        "linkLabel": "Read on arXiv",
+        "linkUrl": "https://arxiv.org/abs/2506.09259v1"
+      },
+      {
+        "title": "AI Voice Moderation Case Study (Modulate × Activision)",
+        "venue": "Case Study (PDF)",
+        "description": "Co-authored a case study on deploying AI-powered voice chat moderation at Call of Duty scale with Modulate, covering system rollout, measurement approach, and lessons learned.",
+        "linkLabel": "Read case study",
+        "linkUrl": "https://22677265.fs1.hubspotusercontent-na1.net/hubfs/22677265/Collateral/Modulate%20Activision%20Case%20Study.pdf"
       }
     ]
   },
@@ -102,7 +151,8 @@
         "when": "2024 • Activision HQ - Santa Monica, CA",
         "description": "Presentation as part of the Activision-wide Call of Duty Summit, discussing how a grassroots disruptive behavior approach evolved into an industry-leading effort for the Call of Duty franchise, and impact to the community.",
         "image": "/speaking-2.jpg",
-        "imagePosition": "center 15%"
+        "imageFit": "cover",
+        "imagePosition": "50% 30%"
       },
       {
         "title": "Inspiring the Next Generation of Leaders",

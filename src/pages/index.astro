@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 import site from "../content/site.json";
 
-const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, links, footer } = site;
+const { hero, aiProjects, work, speaking, publications, mentorship, testimonials, contact, links, footer } = site;
 ---
 <Base>
   <header class="header">
@@ -13,6 +13,7 @@ const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, lin
         <a class="nav-link" href="#about">About</a>
         <a class="nav-link" href="#ai-projects">AI Projects</a>
         <a class="nav-link" href="#work">Work</a>
+        <a class="nav-link" href="#publications">Publications</a>
         <a class="nav-link" href="#mentorship">Mentorship</a>
         <a class="nav-link" href="#contact">Contact</a>
       </nav>
@@ -37,14 +38,6 @@ const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, lin
             />
           </svg>
         </a>
-        <a class="social-header" href={links.portfolioUrl} target="_blank" rel="noreferrer" aria-label="Portfolio website">
-          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              fill="currentColor"
-              d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm7.93 9h-3.35a15.65 15.65 0 0 0-1.08-4.5A8.03 8.03 0 0 1 19.93 11ZM12 4.07a14.1 14.1 0 0 1 2.91 3.43H9.09A14.1 14.1 0 0 1 12 4.07ZM7.5 6.5c-.49 1.4-.84 2.9-1.08 4.5H3.07a8.03 8.03 0 0 1 4.43-4.5ZM3.07 13h3.35c.24 1.6.59 3.1 1.08 4.5a8.03 8.03 0 0 1-4.43-4.5ZM12 19.93A14.1 14.1 0 0 1 9.09 16.5h5.82A14.1 14.1 0 0 1 12 19.93Zm2.41-5.43H9.59a13.7 13.7 0 0 1-.01-4.92h4.83a13.7 13.7 0 0 1-.01 4.92Zm2.98 1.93c.49-1.4.84-2.9 1.07-4.5h3.36a8.03 8.03 0 0 1-4.43 4.5Z"
-            />
-          </svg>
-        </a>
 
         <button class="hamburger-button" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="hamburger-line"></span>
@@ -61,6 +54,7 @@ const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, lin
         <a class="mobile-nav-link" href="#about">About</a>
         <a class="mobile-nav-link" href="#ai-projects">AI Projects</a>
         <a class="mobile-nav-link" href="#work">Work</a>
+        <a class="mobile-nav-link" href="#publications">Publications</a>
         <a class="mobile-nav-link" href="#mentorship">Mentorship</a>
         <a class="mobile-nav-link" href="#contact">Contact</a>
       </div>
@@ -127,6 +121,17 @@ const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, lin
                 <div class="project-company">{w.org}</div>
                 <div class="project-date">{w.when}</div>
                 <p class="project-description">{w.description}</p>
+                {w.linkUrl ? (
+                  <a class="button-base project-cta" href={w.linkUrl} target="_blank" rel="noreferrer">{w.linkLabel ?? "View coverage"}</a>
+                ) : null}
+                {w.asSeenIn ? (
+                  <div class="as-seen-in" aria-label="As seen in">
+                    <span class="as-seen-in-label">{w.asSeenIn.label ?? "As seen in"}</span>
+                    <a class="as-seen-in-link" href={w.asSeenIn.linkUrl} target="_blank" rel="noreferrer" aria-label={w.asSeenIn.alt ?? "Coverage link"}>
+                      <img class="as-seen-in-logo" src={w.asSeenIn.image} alt={w.asSeenIn.alt ?? "Logo"} loading="lazy" />
+                    </a>
+                  </div>
+                ) : null}
               </div>
             </article>
           </div>
@@ -143,6 +148,7 @@ const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, lin
                   src={s.image}
                   alt=""
                   loading="lazy"
+                  data-image-fit={s.imageFit === "cover" ? "cover" : undefined}
                   style={s.imagePosition ? `object-position: ${s.imagePosition}` : undefined}
                 />
               </div>
@@ -157,6 +163,26 @@ const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, lin
         ))}
       </div>
     </section>
+
+    {publications ? (
+      <section id="publications" class="section animate-on-scroll">
+        <h2>{publications.title}</h2>
+        <div class="projects-list">
+          {publications.items.map((p) => (
+            <div class="project-wrapper">
+              <article class="project-card card-base">
+                <div class="project-content">
+                  <h4 class="project-title">{p.title}</h4>
+                  <div class="project-company">{p.venue}</div>
+                  <p class="project-description">{p.description}</p>
+                  <a class="button-base project-cta" href={p.linkUrl} target="_blank" rel="noreferrer">{p.linkLabel ?? "Read"}</a>
+                </div>
+              </article>
+            </div>
+          ))}
+        </div>
+      </section>
+    ) : null}
 
     <section id="mentorship" class="mentorship-section section animate-on-scroll">
       <h2 class="mentorship-heading">{mentorship.title}</h2>
@@ -321,6 +347,7 @@ const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, lin
           <a class="footer-link" href="#about">About</a>
           <a class="footer-link" href="#ai-projects">AI Projects</a>
           <a class="footer-link" href="#work">Work</a>
+          <a class="footer-link" href="#publications">Publications</a>
           <a class="footer-link" href="#mentorship">Mentorship</a>
           <a class="footer-link" href="#contact">Contact</a>
         </nav>
@@ -346,14 +373,6 @@ const { hero, aiProjects, work, speaking, mentorship, testimonials, contact, lin
                 fill-rule="evenodd"
                 clip-rule="evenodd"
                 d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.195-22.23-5.378-22.23-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
-              />
-            </svg>
-          </a>
-          <a class="social-icon-link" href={links.portfolioUrl} target="_blank" rel="noreferrer" aria-label="Portfolio website">
-            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                fill="currentColor"
-                d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm7.93 9h-3.35a15.65 15.65 0 0 0-1.08-4.5A8.03 8.03 0 0 1 19.93 11ZM12 4.07a14.1 14.1 0 0 1 2.91 3.43H9.09A14.1 14.1 0 0 1 12 4.07ZM7.5 6.5c-.49 1.4-.84 2.9-1.08 4.5H3.07a8.03 8.03 0 0 1 4.43-4.5ZM3.07 13h3.35c.24 1.6.59 3.1 1.08 4.5a8.03 8.03 0 0 1-4.43-4.5ZM12 19.93A14.1 14.1 0 0 1 9.09 16.5h5.82A14.1 14.1 0 0 1 12 19.93Zm2.41-5.43H9.59a13.7 13.7 0 0 1-.01-4.92h4.83a13.7 13.7 0 0 1-.01 4.92Zm2.98 1.93c.49-1.4.84-2.9 1.07-4.5h3.36a8.03 8.03 0 0 1-4.43 4.5Z"
               />
             </svg>
           </a>
