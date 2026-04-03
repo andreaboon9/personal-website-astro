@@ -27,12 +27,24 @@
   }
 }
 
-/* 1) Hero headline gradient across full text */
-.hero h1 > span:first-child {
+/* Hero portrait: .hero-image-entrance starts at opacity:0 and only fades in via CSS animation.
+   On viewports >1024px there is no fallback rule (unlike max-width:1024), so if the animation
+   doesn’t run the photo stays invisible. Force the post-animation state so the image always shows. */
+.hero-image-entrance {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+}
+
+/* 1) Hero headline gradient + slightly open spacing (no typewriter cursor) */
+.hero h1 .hero-headline-text {
   background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: 0.04em;
+  word-spacing: 0.14em;
 }
 
 /* 3) Make "View demo" CTA prominent like original */
@@ -97,6 +109,61 @@
     margin-top: 1.25rem;
     justify-content: flex-start;
   }
+}
+
+/* Publications: “With …” badges — logo sizing matches work tile Fast Company mark */
+#publications .project-card.card-base {
+  overflow: visible !important;
+}
+#publications .project-card {
+  position: relative;
+}
+#publications .project-content {
+  position: relative;
+}
+#publications .project-title {
+  white-space: pre-line;
+}
+@media (min-width: 769px) {
+  #publications .publication-card--collab .project-title {
+    padding-right: 11rem;
+  }
+}
+#publications .publication-collab .as-seen-in-link {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.1);
+  overflow: visible;
+  max-width: none;
+}
+#publications .publication-collab .as-seen-in-link--wordmark {
+  padding: 0.38rem 0.85rem 0.38rem 0.9rem;
+}
+#publications .publication-collab .collab-wordmark.collab-wordmark-modulate {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+}
+/* Match Caltech + Modulate lockups to the same rendered footprint */
+#publications .publication-collab .as-seen-in-logo.collab-logo-caltech,
+#publications .publication-collab .as-seen-in-logo.collab-logo-modulate {
+  height: 18px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  opacity: 0.92;
+}
+#publications .publication-collab .as-seen-in-logo.collab-logo-caltech {
+  filter: none;
+}
+/* Navy wordmark reads on dark cards; keep gradient hues */
+#publications .publication-collab .as-seen-in-logo.collab-logo-modulate {
+  filter: brightness(1.35) contrast(1.05);
 }
 
 /* 1) Indentation/text alignment inside tiles (don't let .section p center them) */

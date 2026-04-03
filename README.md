@@ -8,6 +8,8 @@ Edit copy and lists in **`src/content/site.json`**. Layout and styles live under
 
 **LinkedIn + resume alignment:** See **`job-search/offsite-visibility-checklist.md`** in the repo root.
 
+**SEO + GA4 + UTM:** After deploy, submit `sitemap-index.xml` in Google Search Console. For Google Analytics 4, set Netlify env **`PUBLIC_GA_MEASUREMENT_ID`** (`G-…`). Full steps and example UTM links: **`ANALYTICS-AND-SEO.md`**.
+
 ## Develop
 
 ```bash

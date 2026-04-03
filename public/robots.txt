@@ -1,0 +1,5 @@
+# https://andreaboon.netlify.app/
+User-agent: *
+Allow: /
+
+Sitemap: https://andreaboon.netlify.app/sitemap-index.xml

@@ -4,12 +4,22 @@
     "description": "Product Leader. Trust & Safety, AI/ML, positive play, social experiences, gaming, social platforms, and livestreaming at scale. Ex-Twitter, BIGO LIVE.",
     "themeColor": "#0a0a0a"
   },
+  "seo": {
+    "canonicalOrigin": "https://andreaboon.netlify.app",
+    "ogImagePath": "/hero.jpg",
+    "person": {
+      "name": "Andrea Boonyarungsrit",
+      "alternateName": "Penphob Boonyarungsrit",
+      "jobTitle": "Product Leader",
+      "worksFor": "Activision"
+    }
+  },
   "hero": {
-    "headline": "Hi! I'm Andrea, a Product Leader",
+    "headline": "Hi, I'm Andrea!",
     "subheadline": "I build Trust & Safety, and social experiences for communities at scale for gaming and social platforms.",
-    "bio": "I'm a product leader at Activision on positive play, social, and trust & safety domains, shipping AI/ML for moderation and healthier voice and text experiences for the Call of Duty franchise. Previously I led content moderation tools at Twitter and communities & creator growth at BIGO LIVE.",
-    "highlights": "Recent focus: AI voice and text moderation, voice chat safety, positive play, social experiences.",
-    "locationLine": "Raised in Bangkok 🇹🇭 Currently in Los Angeles 🇺🇸",
+    "bio": "I'm a product leader at Activision on positive play, social, and trust & safety domains, shipping AI/ML for content moderation and healthier voice and text experiences for the Call of Duty franchise. Previously I led content moderation tools at Twitter and communities & creator growth at BIGO LIVE.",
+    "highlights": "Outside of work, I'm into rock climbing (sport, lead), running, traveling, cooking (mostly healthy meals), live music, and building with AI. I aim to do or try something new weekly.",
+    "locationLine": "Raised in Bangkok 🇹🇭 currently in Los Angeles 🇺🇸",
     "heroImage": "/hero.jpg"
   },
   "aiProjects": {
@@ -69,7 +79,7 @@
         "title": "Voice Chat Enhancements",
         "org": "ACTIVISION",
         "when": "2024 • Call of Duty: Modern Warfare III, Call of Duty: Warzone",
-        "description": "Led development of voice chat enforcement improvements while sustaining competitive spirit. Publicly reported results include a combined 67% reduction in repeat offenders (MWIII + Warzone) after improved voice enforcement in June 2024, 80% of enforced players not re-offending (July 2024), and exposure to disruptive voice chat dropping by 43% since January 2024.",
+        "description": "Led development of voice chat and enforcement improvements while sustaining competitive spirit. Publicly reported results include a combined 67% reduction in repeat offenders after improved voice enforcement in June 2024, 80% of enforced players not re-offending (July 2024), and exposure to disruptive voice chat dropping by 43% since January 2024.",
         "image": "/project-alpha.jpeg",
         "linkLabel": "View coverage",
         "linkUrl": "https://www.callofduty.com/blog/2024/10/call-of-duty-anti-toxicity-progress-report-black-ops-6-moderation-results",
@@ -83,8 +93,8 @@
       {
         "title": "AI-Powered Voice Moderation System",
         "org": "ACTIVISION",
-        "when": "2023 • Call of Duty: Modern Warfare II, Call of Duty: Warzone",
-        "description": "Led launch of Call of Duty’s in-game AI voice chat moderation partnership with Modulate (ToxMod), with a public rollout beginning in North America (beta) and expanding to a global release (excluding Asia-Pacific) alongside MWIII. This system identifies and enforces against toxic speech in real time (e.g., hate speech, discriminatory language, harassment).",
+        "when": "2023 • Call of Duty: Modern Warfare II, Call of Duty: Modern Warfare III, Call of Duty: Warzone",
+        "description": "Led launch of Call of Duty’s first in-game AI voice chat moderation system, with a public rollout beginning in North America (beta) in Call of Duty: Modern Warfare II and expanding to a global release in Call of Duty: Modern Warfare III and Call of Duty: Warzone. This system proactively identifies and enforces against disruptive speech in real time.",
         "image": "/project-beta.jpg",
         "linkLabel": "View coverage",
         "linkUrl": "https://www.callofduty.com/blog/2023/08/call-of-duty-modern-warfare-warzone-anti-toxicity-progress-report"
@@ -114,24 +124,45 @@
     "items": [
       {
         "title": "Prosocial Behavior Detection in Player Game Chat",
-        "venue": "arXiv (2025)",
+        "venue": "ACTIVISION",
         "description": "Co-developed a three-stage human–AI pipeline to define, label, and deploy prosocial behavior classifiers where no established ground truth existed, including a human–LLM disagreement loop and a two-tier inference system that reduced inference costs by ~70% while maintaining ~0.90 precision.",
-        "linkLabel": "Read on arXiv",
-        "linkUrl": "https://arxiv.org/abs/2508.05938v1"
+        "linkLabel": "Read research paper",
+        "linkUrl": "https://arxiv.org/abs/2508.05938v1",
+        "collaboration": {
+          "label": "With",
+          "image": "/caltech-logo.png",
+          "alt": "Caltech",
+          "linkUrl": "https://www.caltech.edu/about/news/caltech-and-activision-publishing-team-up-to-combat-bad-behavior-online",
+          "logoClass": "collab-logo-caltech"
+        }
       },
       {
         "title": "Self-Anchored Attention Model for Prosocial Text Chat",
-        "venue": "arXiv (2025)",
+        "venue": "ACTIVISION",
         "description": "Co-developed an automated system to detect and classify prosocial behavior in in-game text chat at scale; contributed product direction for a self-anchored attention model improving classification accuracy by ~7.9% in low-data settings.",
-        "linkLabel": "Read on arXiv",
-        "linkUrl": "https://arxiv.org/abs/2506.09259v1"
+        "linkLabel": "Read research paper",
+        "linkUrl": "https://arxiv.org/abs/2506.09259v1",
+        "collaboration": {
+          "label": "With",
+          "image": "/caltech-logo.png",
+          "alt": "Caltech",
+          "linkUrl": "https://www.caltech.edu/about/news/caltech-and-activision-publishing-team-up-to-combat-bad-behavior-online",
+          "logoClass": "collab-logo-caltech"
+        }
       },
       {
-        "title": "AI Voice Moderation Case Study (Modulate × Activision)",
-        "venue": "Case Study (PDF)",
+        "title": "Impact of AI Voice Moderation on the Call of Duty Player Experience",
+        "venue": "ACTIVISION",
         "description": "Co-authored a case study on deploying AI-powered voice chat moderation at Call of Duty scale with Modulate, covering system rollout, measurement approach, and lessons learned.",
         "linkLabel": "Read case study",
-        "linkUrl": "https://22677265.fs1.hubspotusercontent-na1.net/hubfs/22677265/Collateral/Modulate%20Activision%20Case%20Study.pdf"
+        "linkUrl": "https://22677265.fs1.hubspotusercontent-na1.net/hubfs/22677265/Collateral/Modulate%20Activision%20Case%20Study.pdf",
+        "collaboration": {
+          "label": "With",
+          "image": "/modulate-logo.png",
+          "alt": "Modulate",
+          "linkUrl": "https://www.modulate.ai/",
+          "logoClass": "collab-logo-modulate"
+        }
       }
     ]
   },
@@ -180,14 +211,14 @@
   },
   "mentorship": {
     "title": "Product Mentorship",
-    "ctaTitle": "Ready to level up your product management skills?",
+    "ctaTitle": "Ready to level up your PM skills in the age of AI?",
     "badges": [
       { "label": "Top 100 Product Mentor", "subLabel": "on ADPList", "image": "/adplist-top100.svg" }
     ],
     "copy": [
-      "Mastering core product skills separates good PMs from great ones. Remote work with distributed teams has taught me that outcomes hinge on fundamentals: strategy and roadmap, thoughtful prioritization that fits your unique context, stakeholder management, and iterative development.",
+      "Still mastering core product skills separates good PMs from great ones. Remote work with distributed teams in the Gen AI era has taught me that outcomes hinge on fundamentals: product sense, strategy and roadmap, thoughtful prioritization that fits your unique context, stakeholder management, and iterative development.",
       "What sets my mentorship apart is my commitment to practical, unfiltered guidance: actionable feedback that helps you grow. I've mentored many PMs through the early career crunch, from building confidence to influencing without authority.",
-      "Strong fit: An APM or PM already in-role who wants to accelerate through stronger PM craft (including using AI for prototyping and 10x core PM work and productivity)."
+      "Are you an APM or PM who wants to accelerate through stronger PM craft (including using AI for prototyping and 10x-ing core PM work and productivity)?"
     ],
     "linkLabel": "Read more",
     "linkUrl": "https://mentorcruise.com/blog/andrea-boonyarungsrit-77b1b/",
@@ -217,7 +248,7 @@
   },
   "contact": {
     "title": "Contact",
-    "intro": "If you'd like to collaborate, email me at andreaboonyarungsrit@gmail(dot)com and let's talk!",
+    "intro": "I'm open to new opportunities, collaborations, and speaking engagements. Email me at andreaboonyarungsrit@gmail(dot)com and let's talk!",
     "email": "andreaboonyarungsrit@gmail.com"
   },
   "links": {
@@ -252,7 +283,7 @@
     ]
   },
   "footer": {
-    "copyright": "© 2026 Andrea Boonyarungsrit. All rights reserved."
+    "copyright": "© 2026 Andrea Boonyarungsrit. All rights reserved. Built with Claude Code, Cursor, and Astro."
   }
 }
 

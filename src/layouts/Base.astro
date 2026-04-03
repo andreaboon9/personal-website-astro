@@ -2,7 +2,39 @@
 import site from "../content/site.json";
 
 const { title, description, themeColor } = site.meta;
+const { links } = site;
+
+const seo = site.seo ?? {
+  canonicalOrigin: "https://andreaboon.netlify.app",
+  ogImagePath: "/hero.jpg",
+  person: {
+    name: "Andrea Boonyarungsrit",
+    jobTitle: "Product Leader",
+    worksFor: "Activision",
+  },
+};
+
+const origin = seo.canonicalOrigin.replace(/\/$/, "");
+const canonicalUrl = `${origin}/`;
+const ogImageUrl = `${origin}${seo.ogImagePath.startsWith("/") ? "" : "/"}${seo.ogImagePath}`;
+
+const sameAs = [links.linkedinUrl, links.githubUrl, links.mentorCruiseProfileUrl].filter(Boolean);
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: seo.person.name,
+  ...(seo.person.alternateName ? { alternateName: seo.person.alternateName } : {}),
+  url: canonicalUrl,
+  jobTitle: seo.person.jobTitle,
+  worksFor: { "@type": "Organization", name: seo.person.worksFor },
+  sameAs,
+};
+
+const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID as string | undefined;
+const gaEnabled = Boolean(gaId && gaId.startsWith("G-"));
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,6 +43,21 @@ const { title, description, themeColor } = site.meta;
     <meta name="theme-color" content={themeColor} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content="en_US" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
 
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,9 +69,24 @@ const { title, description, themeColor } = site.meta;
 
     <link rel="stylesheet" href="/assets/site.css" />
     <link rel="stylesheet" href="/assets/overrides.css" />
+
+    {
+      gaEnabled ? (
+        <>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+          <script is:inline define:vars={{ gaId }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", gaId);
+          </script>
+        </>
+      ) : null
+    }
   </head>
   <body>
     <slot />
   </body>
 </html>
-

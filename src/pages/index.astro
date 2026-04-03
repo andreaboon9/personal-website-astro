@@ -70,7 +70,7 @@ const { hero, aiProjects, work, speaking, publications, mentorship, testimonials
           </div>
         </div>
         <div class="hero-text">
-          <h1><span>{hero.headline}</span> <span class="cursor">_</span></h1>
+          <h1><span class="hero-headline-text">{hero.headline}</span></h1>
           <p class="hero-subtitle">{hero.subheadline}</p>
           <p class="hero-bio">{hero.bio}</p>
           <p class="hero-bio">{hero.highlights}</p>
@@ -170,8 +170,31 @@ const { hero, aiProjects, work, speaking, publications, mentorship, testimonials
         <div class="projects-list">
           {publications.items.map((p) => (
             <div class="project-wrapper">
-              <article class="project-card card-base">
+              <article class:list={["project-card", "card-base", p.collaboration ? "publication-card--collab" : undefined]}>
                 <div class="project-content">
+                  {p.collaboration ? (
+                    <div class="as-seen-in publication-collab" aria-label={p.collaboration.label ?? "Collaboration"}>
+                      <span class="as-seen-in-label">{p.collaboration.label ?? "In collaboration with"}</span>
+                      <a
+                        class:list={["as-seen-in-link", p.collaboration.wordmark ? "as-seen-in-link--wordmark" : undefined].filter(Boolean)}
+                        href={p.collaboration.linkUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={p.collaboration.alt ?? "Collaborator link"}
+                      >
+                        {p.collaboration.wordmark ? (
+                          <span class:list={["collab-wordmark", p.collaboration.logoClass].filter(Boolean)}>{p.collaboration.wordmark}</span>
+                        ) : (
+                          <img
+                            class:list={["as-seen-in-logo", p.collaboration.logoClass].filter(Boolean)}
+                            src={p.collaboration.image}
+                            alt={p.collaboration.alt ?? ""}
+                            loading="lazy"
+                          />
+                        )}
+                      </a>
+                    </div>
+                  ) : null}
                   <h4 class="project-title">{p.title}</h4>
                   <div class="project-company">{p.venue}</div>
                   <p class="project-description">{p.description}</p>
